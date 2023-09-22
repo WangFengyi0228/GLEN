@@ -1,5 +1,5 @@
 # GLEN
-This is the code associated with the submission "Understanding Temporal Graph Learning From Global and Local Perspectives".
+This is the code associated with the submission "Boosting Temporal Graph Learning From Global and Local Perspectives".
 
 Our code references the benchmark [DGB](https://github.com/fpour/DGB).
 
@@ -26,7 +26,7 @@ The folder 'data' contains processed datasets. All the datasets used in the pape
 
 #### Link prediction
 
-To run GLEN on Wikipedia, Reddit, UCI, Enron, MOOC, UN Trade for link prediction task:
+To run GLEN on Wikipedia, Reddit, UCI, Enron, MOOC, UN Trade, Flights for link prediction task:
 
 ```{bash}
 python train_link_prediction.py -d wikipedia --n_degree 10 --n_head 2 --drop_out 0.3 --window 2 --n_runs 5
@@ -35,6 +35,7 @@ python train_link_prediction.py -d uci --n_degree 30 --n_head 1 --drop_out 0.5 -
 python train_link_prediction.py -d enron --n_degree 20 --n_head 4 --drop_out 0.1 --window 1 --n_runs 5
 python train_link_prediction.py -d UNtrade --n_degree 20 --n_head 1 --drop_out 0.1 --window 1 --n_runs 5
 python train_link_prediction.py -d mooc --n_degree 20 --n_head 4 --drop_out 0.1 --window 8 --n_runs 5
+python train_link_prediction.py -d Flights --n_degree 20 --n_head 2 --drop_out 0.3 --window 2 --n_runs 5
 ```
 
 Apply DGB test for GLEN ([DGB repository](https://github.com/fpour/DGB)):
@@ -64,6 +65,10 @@ python dgb_test_for_GLEN.py -d UNtrade --n_degree 20 --n_head 1 --drop_out 0.1 -
 python dgb_test_for_GLEN.py -d mooc --n_degree 20 --n_head 4 --drop_out 0.1 --window 8 --neg_sample rnd --n_runs 5
 python dgb_test_for_GLEN.py -d mooc --n_degree 20 --n_head 4 --drop_out 0.1 --window 8 --neg_sample hist_nre --n_runs 5
 python dgb_test_for_GLEN.py -d mooc --n_degree 20 --n_head 4 --drop_out 0.1 --window 8 --neg_sample induc_nre --n_runs 5
+
+python dgb_test_for_GLEN.py -d Flights --n_degree 10 --n_head 2 --drop_out 0.3 --window 2 --neg_sample rnd --n_runs 5
+python dgb_test_for_GLEN.py -d Flights --n_degree 10 --n_head 2 --drop_out 0.3 --window 2 --neg_sample hist_nre --n_runs 5
+python dgb_test_for_GLEN.py -d Flights --n_degree 10 --n_head 2 --drop_out 0.3 --window 2 --neg_sample induc_nre --n_runs 5
 ```
 
 **rnd** means random negative sampling.

@@ -1,5 +1,5 @@
 # GLEN
-This is the code associated with the submission "Boosting Temporal Graph Learning From Global and Local Perspectives".
+This is the code associated with the paper "Boosting Temporal Graph Learning From Global and Local Perspectives".
 
 Our code references the benchmark [DGB](https://github.com/fpour/DGB).
 
